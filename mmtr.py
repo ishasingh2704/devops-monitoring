@@ -48,6 +48,7 @@ def git_flow_commit_and_merge(message="Automated commit for MMTR"):
 
 # --- STEP 2: Build & Push Docker Image ---
 def build_and_push_image(tag="latest"):
+    print("Docker image build and push flow start")
     image_tag = f"{DOCKER_IMAGE}:{tag}"
     run_cmd(["docker", "build", "-t", image_tag, "."])
     run_cmd(["docker", "login", "-u", DOCKER_USERNAME, "-p", DOCKER_PASSWORD])
