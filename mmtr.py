@@ -3,15 +3,21 @@ import requests
 import time
 import json
 import os
+from dotenv import load_dotenv
 
-# --- CONFIG ---
-DOCKER_IMAGE = "lalit1029/python-service2"
-DEPLOYMENT = "python-service"
-NAMESPACE = "default"
-PROMETHEUS_URL = "http://localhost:9090"
-CHAOS_MANIFEST = "python-chaos.yaml"
-DOCKER_USERNAME = os.getenv("lalit1029")
-DOCKER_PASSWORD = os.getenv("Komal@lalit90")
+# --- Load .env file ---
+load_dotenv()
+
+
+# --- CONFIG from .env ---
+DOCKER_USERNAME = os.getenv("DOCKER_USERNAME")
+DOCKER_PASSWORD = os.getenv("DOCKER_PASSWORD")
+DOCKER_IMAGE = os.getenv("DOCKER_IMAGE")
+DEPLOYMENT = os.getenv("DEPLOYMENT")
+NAMESPACE = os.getenv("NAMESPACE")
+PROMETHEUS_URL = os.getenv("PROMETHEUS_URL")
+CHAOS_MANIFEST = os.getenv("CHAOS_MANIFEST")
+
 # --- Helper to run shell commands ---
 def run_cmd(cmd, check=True):
     print(f"Running: {' '.join(cmd)}")
