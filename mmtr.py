@@ -119,8 +119,8 @@ if __name__ == "__main__":
     build_and_push_image(tag="latest")
     deploy_new_image()
      # Port forward app, Prometheus, and Grafana
-    # port_forward_service(service_name=DEPLOYMENT, local_port=5000, service_port=5000)
-    # port_forward_service(service_name="prometheus-server", local_port=9090, service_port=80, namespace="monitoring")
-    # port_forward_service(service_name="grafana", local_port=3000, service_port=3000, namespace="monitoring")
+    port_forward_service(service_name=DEPLOYMENT, local_port=5000, service_port=5000)
+    port_forward_service(service_name="prometheus-server", local_port=9090, service_port=80, namespace="monitoring")
+    port_forward_service(service_name="grafana", local_port=3000, service_port=3000, namespace="monitoring")
     run_chaos_experiment()
     validate_monitoring()
