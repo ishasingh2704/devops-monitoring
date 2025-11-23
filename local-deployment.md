@@ -12,7 +12,7 @@ docker build -t python-service:latest .
 docker push ishasingh2704/python-service:latest
 
 kubectl apply -f service/python-service.yaml
-# kubectl port-forward svc/python-service 5000:80
+# kubectl port-forward svc/python-service 5000:5000
 
 
 
@@ -49,6 +49,8 @@ kubectl apply -f chaos/python-chaos.yaml
 
 # with chaos engine:
 kubectl apply -f chaosengine.yaml
+
+
 
 
 # In grafana add the below path for prometheus as data source
