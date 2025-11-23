@@ -7,7 +7,7 @@ import json
 DOCKER_IMAGE = "lalit1029/python-service2:latest"
 DEPLOYMENT = "python-service"
 NAMESPACE = "default"
-PROMETHEUS_URL = "http://prometheus-server.monitoring.svc.cluster.local:80"
+PROMETHEUS_URL = "http://localhost:9090"
 CHAOS_MANIFEST = "python-chaos.yaml"
 
 # --- Helper to run shell commands ---
