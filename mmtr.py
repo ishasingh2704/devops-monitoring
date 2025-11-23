@@ -5,7 +5,7 @@ import json
 import os
 
 # --- CONFIG ---
-DOCKER_IMAGE = "lalit1029/python-service2:latest"
+DOCKER_IMAGE = "lalit1029/python-service2"
 DEPLOYMENT = "python-service"
 NAMESPACE = "default"
 PROMETHEUS_URL = "http://localhost:9090"
@@ -57,10 +57,10 @@ def build_and_push_image(tag="latest"):
     return image_tag
 
 # --- STEP 3: Deploy to Kubernetes ---
-def deploy_new_image():
+def deploy_new_image(tag="latest"):
     run_cmd([
         "kubectl", "set", "image", f"deployment/{DEPLOYMENT}",
-        f"{DEPLOYMENT}={DOCKER_IMAGE}", "-n", NAMESPACE
+        f"{DEPLOYMENT}={DOCKER_IMAGE}:{tag}", "-n", NAMESPACE
     ])
     run_cmd([
         "kubectl", "rollout", "status", f"deployment/{DEPLOYMENT}", "-n", NAMESPACE
