@@ -9,7 +9,7 @@ pip install flask prometheus-flask-exporter
 
 
 docker build -t python-service:latest .
-docker push lalit1029/python-service:latest
+docker push ishasingh2704/python-service:latest
 
 kubectl apply -f service/python-service.yaml
 # kubectl port-forward svc/python-service 5000:80
@@ -33,7 +33,7 @@ helm upgrade grafana grafana/grafana -n monitoring -f grafana/values.yaml
 
    kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" 
 # Decode password in base 64
-    [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('paste_your_base64_string_here'))
+    [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('SU1IU3lxRWpQb3JkODE0R3VhdWV3QXJaaEFTSldvc3p1cWVraG84cA=='))
 
    #  dIKGkAFERUUxlIETblzmiAw86Azq27i29IkmEMh2
 
