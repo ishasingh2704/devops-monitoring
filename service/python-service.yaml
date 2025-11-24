@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: python-service
-        image: lalit1029/python-service:latest
+        image: ishasingh2704/python-service:latest
         ports:
         - containerPort: 5000
 ---
