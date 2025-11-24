@@ -8,10 +8,10 @@ spec:
   mode: all
   selector:
     namespaces:
-      - default
+      - defaultpy
     labelSelectors:
       "app": "python-service"
-  duration: "40s"
+  duration: "2m"
 
 
 
