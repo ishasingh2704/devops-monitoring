@@ -1,17 +1,14 @@
 apiVersion: chaos-mesh.org/v1alpha1
 kind: PodChaos
 metadata:
-  name: python-pod-kill-all
+  name: python-pod-kill
   namespace: chaos-testing
 spec:
   action: pod-kill
-  mode: all
+  mode: one
   selector:
     namespaces:
-      - defaultpy
+      - default
     labelSelectors:
       "app": "python-service"
   duration: "2m"
-
-
-
