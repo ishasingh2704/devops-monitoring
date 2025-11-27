@@ -129,3 +129,4 @@ if __name__ == "__main__":
     port_forward_service(service_name="grafana", local_port=3000, service_port=80, namespace="monitoring")
     run_chaos_experiment()
     validate_monitoring()
+
